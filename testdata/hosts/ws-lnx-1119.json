@@ -1,0 +1,58 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "linux"
+  },
+  "host": {
+    "hostname": "ws-lnx-1119",
+    "os": "linux",
+    "os_version": "Ubuntu 24.04.3 LTS",
+    "arch": "x86_64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "devon"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [],
+  "agentic_tools": [],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "vscode",
+      "extension_id": "Continue.continue",
+      "version": "1.1.42",
+      "user": "devon",
+      "path": "/home/devon/.vscode/extensions/Continue.continue-1.1.42"
+    },
+    {
+      "ide": "vscode",
+      "extension_id": "saoudrizwan.claude-dev",
+      "version": "3.26.1",
+      "user": "devon",
+      "path": "/home/devon/.vscode/extensions/saoudrizwan.claude-dev-3.26.1"
+    }
+  ],
+  "package_manifests": [
+    {
+      "path": "/home/devon/Projects/service-api/package.json",
+      "ecosystem": "npm",
+      "user": "devon",
+      "ai_packages": [
+        "anthropic",
+        "@modelcontextprotocol/sdk"
+      ]
+    }
+  ],
+  "env_key_signals": [],
+  "errors": []
+}

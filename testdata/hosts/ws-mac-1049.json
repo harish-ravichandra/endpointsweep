@@ -1,0 +1,91 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "macos"
+  },
+  "host": {
+    "hostname": "ws-mac-1049",
+    "os": "macos",
+    "os_version": "15.6.1",
+    "arch": "arm64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "devon"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/Users/devon/Library/Application Support/Claude/claude_desktop_config.json",
+      "user": "devon",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "sequential-thinking": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-sequential-thinking@1.2.0"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/Users/devon/.cursor/mcp.json",
+      "user": "devon",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "filesystem": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-filesystem@2.1.4",
+              "/Users/devon/Projects"
+            ]
+          },
+          "stock-ticker": {
+            "command": "uvx",
+            "args": [
+              "ticker-mcp==0.2.0"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "/opt/homebrew/bin/claude",
+      "version": "2.1.268",
+      "user": "devon",
+      "source": "path"
+    }
+  ],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "cursor",
+      "extension_id": "Codeium.codeium",
+      "version": "1.40.2",
+      "user": "devon",
+      "path": "/Users/devon/.cursor/extensions/Codeium.codeium-1.40.2"
+    }
+  ],
+  "package_manifests": [],
+  "env_key_signals": [],
+  "errors": []
+}

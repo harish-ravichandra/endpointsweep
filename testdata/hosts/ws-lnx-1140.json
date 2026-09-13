@@ -1,0 +1,108 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "linux"
+  },
+  "host": {
+    "hostname": "ws-lnx-1140",
+    "os": "linux",
+    "os_version": "Ubuntu 24.04.3 LTS",
+    "arch": "x86_64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "alex"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/home/alex/.config/Claude/claude_desktop_config.json",
+      "user": "alex",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "time": {
+            "command": "uvx",
+            "args": [
+              "mcp-server-time==0.4.1"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/home/alex/.cursor/mcp.json",
+      "user": "alex",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "memory": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-memory@1.0.9"
+            ]
+          },
+          "shell": {
+            "command": "/bin/bash",
+            "args": [
+              "-c",
+              "exec /usr/local/lib/mcp-shell/server.sh"
+            ],
+            "env": {
+              "SHELL_MCP_TOKEN": ""
+            }
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "aider",
+      "path": "/home/alex/.local/bin/aider",
+      "version": "0.86.1",
+      "user": "alex",
+      "source": "package_manager"
+    },
+    {
+      "name": "goose",
+      "path": "/home/alex/.local/bin/goose",
+      "version": "1.9.0",
+      "user": "alex",
+      "source": "package_manager"
+    }
+  ],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "vscode",
+      "extension_id": "GitHub.copilot",
+      "version": "1.256.0",
+      "user": "alex",
+      "path": "/home/alex/.vscode/extensions/GitHub.copilot-1.256.0"
+    },
+    {
+      "ide": "vscode",
+      "extension_id": "Continue.continue",
+      "version": "1.1.42",
+      "user": "alex",
+      "path": "/home/alex/.vscode/extensions/Continue.continue-1.1.42"
+    }
+  ],
+  "package_manifests": [],
+  "env_key_signals": [],
+  "errors": []
+}

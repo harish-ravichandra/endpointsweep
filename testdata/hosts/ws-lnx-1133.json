@@ -1,0 +1,108 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "linux"
+  },
+  "host": {
+    "hostname": "ws-lnx-1133",
+    "os": "linux",
+    "os_version": "Ubuntu 24.04.3 LTS",
+    "arch": "x86_64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "quinn"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/home/quinn/.config/Claude/claude_desktop_config.json",
+      "user": "quinn",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "memory": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-memory@1.0.9"
+            ]
+          },
+          "sequential-thinking": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-sequential-thinking@1.2.0"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/home/quinn/.cursor/mcp.json",
+      "user": "quinn",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "internal-docs": {
+            "command": "node",
+            "args": [
+              "/opt/acme-mcp/docs-server/index.js",
+              "--root",
+              "/opt/acme-mcp/docs"
+            ]
+          },
+          "home-assistant": {
+            "command": "npx",
+            "args": [
+              "hass-mcp@0.9.1"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "/usr/local/bin/claude",
+      "version": "2.1.268",
+      "user": "quinn",
+      "source": "path"
+    }
+  ],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "cursor",
+      "extension_id": "Codeium.codeium",
+      "version": "1.40.2",
+      "user": "quinn",
+      "path": "/home/quinn/.cursor/extensions/Codeium.codeium-1.40.2"
+    }
+  ],
+  "package_manifests": [],
+  "env_key_signals": [
+    {
+      "path": "/home/quinn/.bashrc",
+      "var_names": [
+        "ANTHROPIC_API_KEY",
+        "OPENAI_API_KEY"
+      ],
+      "user": "quinn",
+      "kind": "shell_rc"
+    }
+  ],
+  "errors": []
+}

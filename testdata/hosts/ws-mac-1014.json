@@ -1,0 +1,91 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "macos"
+  },
+  "host": {
+    "hostname": "ws-mac-1014",
+    "os": "macos",
+    "os_version": "15.6.1",
+    "arch": "arm64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "sam"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/Users/sam/Library/Application Support/Claude/claude_desktop_config.json",
+      "user": "sam",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "memory": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-memory@1.0.9"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/Users/sam/.cursor/mcp.json",
+      "user": "sam",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "internal-docs": {
+            "command": "node",
+            "args": [
+              "/opt/acme-mcp/docs-server/index.js",
+              "--root",
+              "/opt/acme-mcp/docs"
+            ]
+          },
+          "internal-tools": {
+            "command": "npx",
+            "args": [
+              "@acme/internal-tools-mcp@1.4.0"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "vscode",
+      "extension_id": "saoudrizwan.claude-dev",
+      "version": "3.26.1",
+      "user": "sam",
+      "path": "/Users/sam/.vscode/extensions/saoudrizwan.claude-dev-3.26.1"
+    },
+    {
+      "ide": "cursor",
+      "extension_id": "Codeium.codeium",
+      "version": "1.40.2",
+      "user": "sam",
+      "path": "/Users/sam/.cursor/extensions/Codeium.codeium-1.40.2"
+    }
+  ],
+  "package_manifests": [],
+  "env_key_signals": [],
+  "errors": []
+}

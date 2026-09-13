@@ -1,0 +1,104 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "macos"
+  },
+  "host": {
+    "hostname": "ws-mac-1063",
+    "os": "macos",
+    "os_version": "15.6.1",
+    "arch": "arm64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "quinn"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/Users/quinn/Library/Application Support/Claude/claude_desktop_config.json",
+      "user": "quinn",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "time": {
+            "command": "uvx",
+            "args": [
+              "mcp-server-time==0.4.1"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/Users/quinn/.cursor/mcp.json",
+      "user": "quinn",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "sequential-thinking": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-sequential-thinking@1.2.0"
+            ]
+          },
+          "remote-crm": {
+            "type": "sse",
+            "url": "https://crm-mcp.example.com/mcp/7f3c9a41b2e84d6597c0aa13be55d802/sse"
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "/opt/homebrew/bin/claude",
+      "version": "2.1.270",
+      "user": "quinn",
+      "source": "path"
+    }
+  ],
+  "model_runtimes": [
+    {
+      "name": "ollama",
+      "installed": true,
+      "running": true,
+      "listen_addrs": [
+        "0.0.0.0:11434"
+      ],
+      "models": [
+        "llama3.2:3b",
+        "qwen2.5-coder:7b"
+      ],
+      "version": "0.12.3"
+    }
+  ],
+  "ide_extensions": [],
+  "package_manifests": [
+    {
+      "path": "/Users/quinn/Projects/service-api/package.json",
+      "ecosystem": "npm",
+      "user": "quinn",
+      "ai_packages": [
+        "anthropic",
+        "@modelcontextprotocol/sdk"
+      ]
+    }
+  ],
+  "env_key_signals": [],
+  "errors": []
+}

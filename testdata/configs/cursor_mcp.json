@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-postgres@1.3.0", "--readonly"],
+      "env": { "PGPASSWORD": "[redacted]" }
+    },
+    "remote-crm": {
+      "type": "sse",
+      "url": "https://crm-mcp.example.com/mcp/7f3c9a41b2e84d6597c0aa13be55d802/sse"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "linux"
+  },
+  "host": {
+    "hostname": "ws-lnx-1126",
+    "os": "linux",
+    "os_version": "Ubuntu 24.04.3 LTS",
+    "arch": "x86_64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "harper"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/home/harper/.config/Claude/claude_desktop_config.json",
+      "user": "harper",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "filesystem": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-filesystem@2.1.4",
+              "/home/harper/Projects"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/home/harper/.cursor/mcp.json",
+      "user": "harper",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "time": {
+            "command": "uvx",
+            "args": [
+              "mcp-server-time==0.4.1"
+            ]
+          },
+          "admin-tools": {
+            "command": "sudo",
+            "args": [
+              "/usr/local/bin/mcp-admin-server",
+              "--privileged"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "generic",
+      "path": "/etc/endpointsweep/mcp.json",
+      "user": "root",
+      "elevated_scope": true,
+      "bytes": 210,
+      "raw": {
+        "mcpServers": {
+          "fleet-agent": {
+            "command": "node",
+            "args": [
+              "/opt/fleet-agent/server.js"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "/usr/local/bin/claude",
+      "version": "2.1.270",
+      "user": "harper",
+      "source": "path"
+    }
+  ],
+  "model_runtimes": [],
+  "ide_extensions": [],
+  "package_manifests": [],
+  "env_key_signals": [],
+  "errors": []
+}

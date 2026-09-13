@@ -1,0 +1,90 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "macos"
+  },
+  "host": {
+    "hostname": "ws-mac-1077",
+    "os": "macos",
+    "os_version": "15.6.1",
+    "arch": "arm64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "jordan"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/Users/jordan/Library/Application Support/Claude/claude_desktop_config.json",
+      "user": "jordan",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "filesystem": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-filesystem@2.1.4",
+              "/Users/jordan/Projects"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/Users/jordan/.cursor/mcp.json",
+      "user": "jordan",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "sequential-thinking": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-sequential-thinking@1.2.0"
+            ]
+          },
+          "internal-tools": {
+            "command": "node",
+            "args": [
+              "/Users/jordan/Downloads/internal-tools/server.js"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "cursor",
+      "extension_id": "Codeium.codeium",
+      "version": "1.40.2",
+      "user": "jordan",
+      "path": "/Users/jordan/.cursor/extensions/Codeium.codeium-1.40.2"
+    },
+    {
+      "ide": "vscode",
+      "extension_id": "GitHub.copilot",
+      "version": "1.256.0",
+      "user": "jordan",
+      "path": "/Users/jordan/.vscode/extensions/GitHub.copilot-1.256.0"
+    }
+  ],
+  "package_manifests": [],
+  "env_key_signals": [],
+  "errors": []
+}

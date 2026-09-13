@@ -1,0 +1,147 @@
+{
+  "host_count": 28,
+  "fleet_score": 38.4,
+  "finding_counts": {
+    "ES-101:CRITICAL": 1,
+    "ES-101:HIGH": 2,
+    "ES-102:HIGH": 3,
+    "ES-103:HIGH": 1,
+    "ES-103:MEDIUM": 2,
+    "ES-104:HIGH": 2,
+    "ES-105:MEDIUM": 3,
+    "ES-201:CRITICAL": 2,
+    "ES-202:MEDIUM": 1,
+    "ES-301:HIGH": 13,
+    "ES-302:HIGH": 1,
+    "ES-401:HIGH": 6,
+    "ES-402:MEDIUM": 8,
+    "ES-403:MEDIUM": 1,
+    "ES-404:INFO": 73,
+    "ES-901:HIGH": 1,
+    "ES-902:MEDIUM": 8,
+    "ES-903:INFO": 1
+  },
+  "fleet_finding_subjects": [
+    "ES-901:internal-tools",
+    "ES-902:admin-tools",
+    "ES-902:desktop-commander",
+    "ES-902:home-assistant",
+    "ES-902:kb-search",
+    "ES-902:remote-crm",
+    "ES-902:staged-server",
+    "ES-902:stock-ticker",
+    "ES-902:typosquat-fs",
+    "ES-903:fleet-census"
+  ],
+  "census_totals": {
+    "mcp_servers": 78,
+    "agentic_tools": 28,
+    "ide_extensions": 27,
+    "ai_packages": 14,
+    "model_runtimes": 5,
+    "env_key_signals": 8,
+    "collector_errors": 0
+  },
+  "top_servers": [
+    {
+      "name": "memory",
+      "hosts": 15,
+      "variants": 1
+    },
+    {
+      "name": "sequential-thinking",
+      "hosts": 13,
+      "variants": 1
+    },
+    {
+      "name": "time",
+      "hosts": 9,
+      "variants": 1
+    },
+    {
+      "name": "filesystem",
+      "hosts": 8,
+      "variants": 1
+    },
+    {
+      "name": "internal-docs",
+      "hosts": 6,
+      "variants": 1
+    },
+    {
+      "name": "github",
+      "hosts": 4,
+      "variants": 1
+    },
+    {
+      "name": "internal-tools",
+      "hosts": 4,
+      "variants": 3
+    },
+    {
+      "name": "filesystem-root",
+      "hosts": 3,
+      "variants": 1
+    },
+    {
+      "name": "notes",
+      "hosts": 2,
+      "variants": 1
+    },
+    {
+      "name": "shell",
+      "hosts": 2,
+      "variants": 1
+    },
+    {
+      "name": "fetch-anything",
+      "hosts": 2,
+      "variants": 1
+    },
+    {
+      "name": "fleet-agent",
+      "hosts": 2,
+      "variants": 1
+    },
+    {
+      "name": "staged-server",
+      "hosts": 1,
+      "variants": 1
+    },
+    {
+      "name": "desktop-commander",
+      "hosts": 1,
+      "variants": 1
+    },
+    {
+      "name": "typosquat-fs",
+      "hosts": 1,
+      "variants": 1
+    },
+    {
+      "name": "remote-crm",
+      "hosts": 1,
+      "variants": 1
+    },
+    {
+      "name": "admin-tools",
+      "hosts": 1,
+      "variants": 1
+    },
+    {
+      "name": "kb-search",
+      "hosts": 1,
+      "variants": 1
+    },
+    {
+      "name": "home-assistant",
+      "hosts": 1,
+      "variants": 1
+    },
+    {
+      "name": "stock-ticker",
+      "hosts": 1,
+      "variants": 1
+    }
+  ]
+}

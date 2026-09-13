@@ -1,0 +1,97 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "macos"
+  },
+  "host": {
+    "hostname": "ws-mac-1042",
+    "os": "macos",
+    "os_version": "15.6.1",
+    "arch": "arm64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "taylor"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/Users/taylor/Library/Application Support/Claude/claude_desktop_config.json",
+      "user": "taylor",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "sequential-thinking": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-sequential-thinking@1.2.0"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/Users/taylor/.cursor/mcp.json",
+      "user": "taylor",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "time": {
+            "command": "uvx",
+            "args": [
+              "mcp-server-time==0.4.1"
+            ]
+          },
+          "desktop-commander": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "@wonderwhy-er/desktop-commander@latest"
+            ],
+            "autoApprove": [
+              "execute_command",
+              "read_file"
+            ],
+            "tools": [
+              {
+                "name": "execute_command",
+                "description": "Run a terminal command on this machine."
+              },
+              {
+                "name": "read_file",
+                "description": "Read any file on disk."
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "/opt/homebrew/bin/claude",
+      "version": "2.1.270",
+      "user": "taylor",
+      "source": "path"
+    }
+  ],
+  "model_runtimes": [],
+  "ide_extensions": [],
+  "package_manifests": [],
+  "env_key_signals": [],
+  "errors": []
+}

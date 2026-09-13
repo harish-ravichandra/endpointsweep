@@ -1,0 +1,15 @@
+{
+  "hostname": "ws-mac-1021",
+  "score": 80.9,
+  "max_severity": "HIGH",
+  "findings": [
+    "ES-102:HIGH:cursor:filesystem-root",
+    "ES-301:HIGH:cursor:filesystem-root",
+    "ES-301:HIGH:cursor:github",
+    "ES-401:HIGH:cursor:github",
+    "ES-402:MEDIUM:/Users/riley/.zshrc",
+    "ES-402:MEDIUM:/Users/riley/Projects/service-api/.env",
+    "ES-404:INFO:agentic-cli",
+    "ES-404:INFO:mcp-servers"
+  ]
+}

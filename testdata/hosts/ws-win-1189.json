@@ -1,0 +1,76 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "windows"
+  },
+  "host": {
+    "hostname": "ws-win-1189",
+    "os": "windows",
+    "os_version": "Microsoft Windows 11 Enterprise 10.0.26100",
+    "arch": "AMD64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": null,
+    "elevated": true,
+    "users_scanned": [
+      "devon"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "C:\\Users\\devon\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
+      "user": "devon",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "sequential-thinking": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-sequential-thinking@1.2.0"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "C:\\Users\\devon\\.cursor\\mcp.json",
+      "user": "devon",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "memory": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-memory@1.0.9"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "C:\\Program Files\\nodejs/claude",
+      "version": "2.1.270",
+      "user": "devon",
+      "source": "path"
+    }
+  ],
+  "model_runtimes": [],
+  "ide_extensions": [],
+  "package_manifests": [],
+  "env_key_signals": [],
+  "errors": []
+}

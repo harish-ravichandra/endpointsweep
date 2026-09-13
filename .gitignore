@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+out/
+*.local.json
+
+# Private design brief: contains employer fleet numbers and career notes.
+# Delete this line if you decide to publish it.
+AgentSweep_PROJECT_BRIEF.md

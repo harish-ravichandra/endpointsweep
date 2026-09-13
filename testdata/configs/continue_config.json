@@ -1,0 +1,14 @@
+{
+  "models": [{ "title": "Local", "provider": "ollama", "model": "qwen2.5-coder:7b" }],
+  "experimental": {
+    "modelContextProtocolServers": [
+      {
+        "transport": {
+          "type": "stdio",
+          "command": "npx",
+          "args": ["-y", "@modelcontextprotocol/server-memory"]
+        }
+      }
+    ]
+  }
+}

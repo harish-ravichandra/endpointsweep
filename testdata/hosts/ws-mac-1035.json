@@ -1,0 +1,109 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "macos"
+  },
+  "host": {
+    "hostname": "ws-mac-1035",
+    "os": "macos",
+    "os_version": "15.6.1",
+    "arch": "arm64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "morgan"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/Users/morgan/Library/Application Support/Claude/claude_desktop_config.json",
+      "user": "morgan",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "filesystem": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-filesystem@2.1.4",
+              "/Users/morgan/Projects"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/Users/morgan/.cursor/mcp.json",
+      "user": "morgan",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "memory": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-memory@1.0.9"
+            ]
+          },
+          "internal-tools": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "@acme/internal-tools-mcp@latest"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "aider",
+      "path": "/Users/morgan/.local/bin/aider",
+      "version": "0.84.0",
+      "user": "morgan",
+      "source": "package_manager"
+    }
+  ],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "vscode",
+      "extension_id": "Continue.continue",
+      "version": "1.1.42",
+      "user": "morgan",
+      "path": "/Users/morgan/.vscode/extensions/Continue.continue-1.1.42"
+    },
+    {
+      "ide": "vscode",
+      "extension_id": "saoudrizwan.claude-dev",
+      "version": "3.26.1",
+      "user": "morgan",
+      "path": "/Users/morgan/.vscode/extensions/saoudrizwan.claude-dev-3.26.1"
+    }
+  ],
+  "package_manifests": [
+    {
+      "path": "/Users/morgan/Projects/service-api/package.json",
+      "ecosystem": "npm",
+      "user": "morgan",
+      "ai_packages": [
+        "anthropic",
+        "@modelcontextprotocol/sdk"
+      ]
+    }
+  ],
+  "env_key_signals": [],
+  "errors": []
+}

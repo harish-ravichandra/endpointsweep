@@ -1,0 +1,48 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "windows"
+  },
+  "host": {
+    "hostname": "ws-win-1182",
+    "os": "windows",
+    "os_version": "Microsoft Windows 11 Enterprise 10.0.26100",
+    "arch": "AMD64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": null,
+    "elevated": true,
+    "users_scanned": [
+      "taylor"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [],
+  "agentic_tools": [],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "vscode",
+      "extension_id": "saoudrizwan.claude-dev",
+      "version": "3.26.1",
+      "user": "taylor",
+      "path": "C:\\Users\\taylor/.vscode/extensions/saoudrizwan.claude-dev-3.26.1"
+    },
+    {
+      "ide": "cursor",
+      "extension_id": "Codeium.codeium",
+      "version": "1.40.2",
+      "user": "taylor",
+      "path": "C:\\Users\\taylor/.cursor/extensions/Codeium.codeium-1.40.2"
+    }
+  ],
+  "package_manifests": [],
+  "env_key_signals": [],
+  "errors": []
+}

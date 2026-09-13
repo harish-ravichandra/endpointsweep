@@ -1,0 +1,20 @@
+{
+  "numStartups": 42,
+  "mcpServers": {
+    "memory": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-memory@1.0.9"]
+    }
+  },
+  "projects": {
+    "/Users/alex/Projects/api": {
+      "mcpServers": {
+        "project-db": {
+          "command": "uvx",
+          "args": ["mcp-server-postgres==0.5.0", "--readonly"],
+          "env": { "DATABASE_URL": "[redacted]" }
+        }
+      }
+    }
+  }
+}

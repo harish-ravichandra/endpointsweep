@@ -1,0 +1,19 @@
+{
+  // VS Code settings are JSONC: comments and trailing commas are legal here
+  "editor.fontSize": 13,
+  "mcp": {
+    "servers": {
+      "fetch": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": ["mcp-server-fetch"],
+      },
+      "docs": {
+        "type": "http",
+        "url": "http://localhost:3100/mcp"
+      },
+    }
+  },
+  /* block comments too */
+  "telemetry.telemetryLevel": "off"
+}

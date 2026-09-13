@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "endpointsweep"
+version = "0.1.0"
+description = "Fleet-scale discovery and audit of MCP servers and agentic AI tooling across an endpoint fleet."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "EndpointSweep authors" }]
+keywords = ["mcp", "agentic-ai", "security", "endpoint", "fleet", "shadow-ai", "audit"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: System Administrators",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Security",
+]
+dependencies = []
+
+[project.optional-dependencies]
+rich = ["rich>=13.0"]
+dev = ["pytest>=7.4", "ruff>=0.5", "jsonschema>=4.0"]
+
+[project.scripts]
+endpointsweep = "endpointsweep.cli:main"
+# Short alias — the full name is 13 characters to type.
+esweep = "endpointsweep.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/endpointsweep/endpointsweep"
+
+[tool.setuptools]
+packages = [
+  "endpointsweep",
+  "endpointsweep.parsers",
+  "endpointsweep.checks",
+  "endpointsweep.report",
+  # The collectors live at the repo root because that is where people copy them
+  # from into an MDM console; they are also shipped inside the wheel so that
+  # `endpointsweep scan` works from a plain `pip install`.
+  "endpointsweep.collectors",
+]
+
+[tool.setuptools.package-dir]
+"endpointsweep.collectors" = "collectors"
+
+[tool.setuptools.package-data]
+endpointsweep = ["data/*.json"]
+"endpointsweep.collectors" = ["*.sh", "*.bash", "*.ps1"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff.lint.isort]
+known-first-party = ["endpointsweep", "plugins"]
+known-local-folder = ["helpers"]

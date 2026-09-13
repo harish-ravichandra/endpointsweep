@@ -1,0 +1,131 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "macos"
+  },
+  "host": {
+    "hostname": "ws-mac-1007",
+    "os": "macos",
+    "os_version": "15.6.1",
+    "arch": "arm64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "jordan"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/Users/jordan/Library/Application Support/Claude/claude_desktop_config.json",
+      "user": "jordan",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "memory": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-memory@1.0.9"
+            ]
+          },
+          "filesystem": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-filesystem@2.1.4",
+              "/Users/jordan/Projects"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/Users/jordan/.cursor/mcp.json",
+      "user": "jordan",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "time": {
+            "command": "uvx",
+            "args": [
+              "mcp-server-time==0.4.1"
+            ]
+          },
+          "shell": {
+            "command": "/bin/bash",
+            "args": [
+              "-c",
+              "exec /usr/local/lib/mcp-shell/server.sh"
+            ],
+            "env": {
+              "SHELL_MCP_TOKEN": ""
+            }
+          },
+          "github": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "@modelcontextprotocol/server-github@latest"
+            ],
+            "env": {
+              "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+            }
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "/opt/homebrew/bin/claude",
+      "version": "2.1.268",
+      "user": "jordan",
+      "source": "path"
+    }
+  ],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "vscode",
+      "extension_id": "Continue.continue",
+      "version": "1.1.42",
+      "user": "jordan",
+      "path": "/Users/jordan/.vscode/extensions/Continue.continue-1.1.42"
+    }
+  ],
+  "package_manifests": [
+    {
+      "path": "/Users/jordan/Projects/service-api/package.json",
+      "ecosystem": "npm",
+      "user": "jordan",
+      "ai_packages": [
+        "anthropic",
+        "@modelcontextprotocol/sdk"
+      ]
+    }
+  ],
+  "env_key_signals": [
+    {
+      "path": "/Users/jordan/.zshrc",
+      "var_names": [
+        "ANTHROPIC_API_KEY",
+        "OPENAI_API_KEY"
+      ],
+      "user": "jordan",
+      "kind": "shell_rc"
+    }
+  ],
+  "errors": []
+}

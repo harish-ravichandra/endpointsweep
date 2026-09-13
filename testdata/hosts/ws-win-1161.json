@@ -1,0 +1,109 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "windows"
+  },
+  "host": {
+    "hostname": "ws-win-1161",
+    "os": "windows",
+    "os_version": "Microsoft Windows 11 Enterprise 10.0.26100",
+    "arch": "AMD64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": null,
+    "elevated": true,
+    "users_scanned": [
+      "riley"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "C:\\Users\\riley\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
+      "user": "riley",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "sequential-thinking": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-sequential-thinking@1.2.0"
+            ]
+          },
+          "time": {
+            "command": "uvx",
+            "args": [
+              "mcp-server-time==0.4.1"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "C:\\Users\\riley\\.cursor\\mcp.json",
+      "user": "riley",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "github": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "@modelcontextprotocol/server-github@latest"
+            ],
+            "env": {
+              "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+            }
+          },
+          "fetch-anything": {
+            "command": "uvx",
+            "args": [
+              "mcp-server-fetch"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "cursor",
+      "extension_id": "Codeium.codeium",
+      "version": "1.40.2",
+      "user": "riley",
+      "path": "C:\\Users\\riley/.cursor/extensions/Codeium.codeium-1.40.2"
+    },
+    {
+      "ide": "vscode",
+      "extension_id": "GitHub.copilot",
+      "version": "1.256.0",
+      "user": "riley",
+      "path": "C:\\Users\\riley/.vscode/extensions/GitHub.copilot-1.256.0"
+    }
+  ],
+  "package_manifests": [],
+  "env_key_signals": [
+    {
+      "path": "C:\\Users\\riley\\Documents\\WindowsPowerShell\\Microsoft.PowerShell_profile.ps1",
+      "var_names": [
+        "ANTHROPIC_API_KEY",
+        "OPENAI_API_KEY"
+      ],
+      "user": "riley",
+      "kind": "shell_rc"
+    }
+  ],
+  "errors": []
+}

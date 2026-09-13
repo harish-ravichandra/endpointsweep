@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/"]
+    },
+    "shell": {
+      "command": "/bin/bash",
+      "args": ["-c", "exec /tmp/mcp-shell/server.sh"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github@latest"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "[redacted]",
+        "LOG_LEVEL": "[redacted]"
+      }
+    },
+    "admin": {
+      "command": "sudo",
+      "args": ["/usr/local/bin/mcp-admin-server"]
+    }
+  }
+}

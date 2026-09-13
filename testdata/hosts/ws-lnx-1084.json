@@ -1,0 +1,130 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "linux"
+  },
+  "host": {
+    "hostname": "ws-lnx-1084",
+    "os": "linux",
+    "os_version": "Ubuntu 24.04.3 LTS",
+    "arch": "x86_64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "sam"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {
+    "node": {
+      "path": "/tmp/mcp-build/node",
+      "mode": "0777"
+    }
+  },
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/home/sam/.config/Claude/claude_desktop_config.json",
+      "user": "sam",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "internal-docs": {
+            "command": "node",
+            "args": [
+              "/opt/acme-mcp/docs-server/index.js",
+              "--root",
+              "/opt/acme-mcp/docs"
+            ]
+          },
+          "sequential-thinking": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-sequential-thinking@1.2.0"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/home/sam/.cursor/mcp.json",
+      "user": "sam",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "memory": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-memory@1.0.9"
+            ]
+          },
+          "staged-server": {
+            "command": "node",
+            "args": [
+              "/tmp/mcp-build/server.js"
+            ]
+          },
+          "github": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "@modelcontextprotocol/server-github@latest"
+            ],
+            "env": {
+              "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+            }
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "/usr/local/bin/claude",
+      "version": "2.1.270",
+      "user": "sam",
+      "source": "path"
+    },
+    {
+      "name": "goose",
+      "path": "/home/sam/.local/bin/goose",
+      "version": "1.9.0",
+      "user": "sam",
+      "source": "package_manager"
+    }
+  ],
+  "model_runtimes": [],
+  "ide_extensions": [],
+  "package_manifests": [],
+  "env_key_signals": [
+    {
+      "path": "/home/sam/.bashrc",
+      "var_names": [
+        "ANTHROPIC_API_KEY"
+      ],
+      "user": "sam",
+      "kind": "shell_rc"
+    },
+    {
+      "path": "/home/sam/Projects/service-api/.env",
+      "var_names": [
+        "OPENAI_API_KEY",
+        "DATABASE_PASSWORD"
+      ],
+      "user": "sam",
+      "kind": "dotenv"
+    }
+  ],
+  "errors": []
+}

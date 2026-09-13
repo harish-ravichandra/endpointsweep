@@ -1,0 +1,115 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "linux"
+  },
+  "host": {
+    "hostname": "ws-lnx-1147",
+    "os": "linux",
+    "os_version": "Ubuntu 24.04.3 LTS",
+    "arch": "x86_64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "jordan"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/home/jordan/.config/Claude/claude_desktop_config.json",
+      "user": "jordan",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "internal-docs": {
+            "command": "node",
+            "args": [
+              "/opt/acme-mcp/docs-server/index.js",
+              "--root",
+              "/opt/acme-mcp/docs"
+            ]
+          },
+          "memory": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-memory@1.0.9"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/home/jordan/.cursor/mcp.json",
+      "user": "jordan",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "filesystem": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-filesystem@2.1.4",
+              "/home/jordan/Projects"
+            ]
+          },
+          "internal-tools": {
+            "command": "npx",
+            "args": [
+              "@acme/internal-tools-mcp@1.4.0"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "/usr/local/bin/claude",
+      "version": "2.1.270",
+      "user": "jordan",
+      "source": "path"
+    }
+  ],
+  "model_runtimes": [
+    {
+      "name": "ollama",
+      "installed": true,
+      "running": false,
+      "listen_addrs": [
+        "127.0.0.1:11434"
+      ],
+      "models": [
+        "llama3.2:3b",
+        "qwen2.5-coder:7b"
+      ],
+      "version": "0.12.3"
+    }
+  ],
+  "ide_extensions": [],
+  "package_manifests": [
+    {
+      "path": "/home/jordan/Projects/service-api/package.json",
+      "ecosystem": "npm",
+      "user": "jordan",
+      "ai_packages": [
+        "anthropic",
+        "@modelcontextprotocol/sdk"
+      ]
+    }
+  ],
+  "env_key_signals": [],
+  "errors": []
+}

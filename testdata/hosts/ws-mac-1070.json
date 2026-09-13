@@ -1,0 +1,56 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "macos"
+  },
+  "host": {
+    "hostname": "ws-mac-1070",
+    "os": "macos",
+    "os_version": "15.6.1",
+    "arch": "arm64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "alex"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "/opt/homebrew/bin/claude",
+      "version": "2.1.268",
+      "user": "alex",
+      "source": "path"
+    },
+    {
+      "name": "aider",
+      "path": "/Users/alex/.local/bin/aider",
+      "version": "0.86.1",
+      "user": "alex",
+      "source": "package_manager"
+    }
+  ],
+  "model_runtimes": [],
+  "ide_extensions": [
+    {
+      "ide": "vscode",
+      "extension_id": "saoudrizwan.claude-dev",
+      "version": "3.26.1",
+      "user": "alex",
+      "path": "/Users/alex/.vscode/extensions/saoudrizwan.claude-dev-3.26.1"
+    }
+  ],
+  "package_manifests": [],
+  "env_key_signals": [],
+  "errors": []
+}

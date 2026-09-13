@@ -1,0 +1,109 @@
+{
+  "collector": {
+    "name": "endpointsweep",
+    "version": "0.1.0",
+    "schema": "1",
+    "platform": "linux"
+  },
+  "host": {
+    "hostname": "ws-lnx-1112",
+    "os": "linux",
+    "os_version": "Ubuntu 24.04.3 LTS",
+    "arch": "x86_64",
+    "collected_at": "2026-09-14T03:00:00Z",
+    "collector_version": "0.1.0",
+    "collector_schema": "1",
+    "collector_uid": 0,
+    "elevated": true,
+    "users_scanned": [
+      "taylor"
+    ],
+    "tags": {
+      "site": "synthetic-lab"
+    }
+  },
+  "command_index": {},
+  "client_configs": [
+    {
+      "client": "claude_desktop",
+      "path": "/home/taylor/.config/Claude/claude_desktop_config.json",
+      "user": "taylor",
+      "elevated_scope": false,
+      "bytes": 512,
+      "raw": {
+        "mcpServers": {
+          "memory": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-memory@1.0.9"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "client": "cursor",
+      "path": "/home/taylor/.cursor/mcp.json",
+      "user": "taylor",
+      "elevated_scope": false,
+      "bytes": 384,
+      "raw": {
+        "mcpServers": {
+          "sequential-thinking": {
+            "command": "npx",
+            "args": [
+              "@modelcontextprotocol/server-sequential-thinking@1.2.0"
+            ]
+          },
+          "kb-search": {
+            "command": "uvx",
+            "args": [
+              "kb-mcp==0.3.0"
+            ],
+            "tools": [
+              {
+                "name": "search",
+                "description": "Search the knowledge base. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. Returns ranked results with citations. "
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "agentic_tools": [
+    {
+      "name": "claude",
+      "path": "/usr/local/bin/claude",
+      "version": "2.1.268",
+      "user": "taylor",
+      "source": "path"
+    }
+  ],
+  "model_runtimes": [
+    {
+      "name": "ollama",
+      "installed": true,
+      "running": true,
+      "listen_addrs": [
+        "127.0.0.1:11434"
+      ],
+      "models": [
+        "llama3.2:3b"
+      ],
+      "version": "0.12.3"
+    }
+  ],
+  "ide_extensions": [
+    {
+      "ide": "vscode",
+      "extension_id": "GitHub.copilot",
+      "version": "1.256.0",
+      "user": "taylor",
+      "path": "/home/taylor/.vscode/extensions/GitHub.copilot-1.256.0"
+    }
+  ],
+  "package_manifests": [],
+  "env_key_signals": [],
+  "errors": []
+}
