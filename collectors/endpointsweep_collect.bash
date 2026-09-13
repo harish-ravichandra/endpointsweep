@@ -406,9 +406,9 @@ listen_addrs_for() {
 }
 
 models_for_ollama() {
-	local out="" mdir name mf
-	local -a roots=("${USER_HOMES[@]}" /usr/share/ollama /var/lib/ollama)
-	for home in "${roots[@]}"; do
+	local out="" mdir name mf home
+	local -a ollama_roots=("${USER_HOMES[@]}" /usr/share/ollama /var/lib/ollama)
+	for home in "${ollama_roots[@]}"; do
 		mdir="$home/.ollama/models/manifests"
 		[[ -d "$mdir" ]] || continue
 		while IFS= read -r mf; do
@@ -458,13 +458,20 @@ for idx in "${!USER_HOMES[@]}"; do
 		[[ -d "$extroot" ]] || continue
 		ide=$(basename "$(dirname "$extroot")")
 		ide="${ide#.}"
-		while IFS= read -r ext; do
-			[[ -n "$ext" ]] || continue
+		ext_count=0
+		# Glob rather than `ls | grep`: extension directory names can contain
+		# spaces, which word-splitting would tear apart.
+		for extpath in "$extroot"/*; do
+			[[ -d "$extpath" ]] || continue
+			((ext_count < 60)) || break
+			ext=$(basename "$extpath")
+			grep -Eqi "$AI_EXT_PATTERN" <<< "$ext" || continue
+			ext_count=$((ext_count + 1))
 			ext_id=$(sed -E 's/-[0-9]+\.[0-9]+\.[0-9]+.*$//' <<< "$ext")
 			ext_ver=$(sed -nE 's/.*-([0-9]+\.[0-9]+\.[0-9]+.*)$/\1/p' <<< "$ext")
 			jrow "$F_EXTS" "$(printf '{"ide":%s,"extension_id":%s,"version":%s,"user":%s,"path":%s}' \
 				"$(jstr "$ide")" "$(jstr "$ext_id")" "$(jstr "$ext_ver")" "$(jstr "$user")" "$(jstr "$extroot/$ext")")"
-		done < <(ls -1 "$extroot" 2>/dev/null | grep -Ei "$AI_EXT_PATTERN" | head -n 60)
+		done
 	done
 	for jbplug in "$home/.local/share/JetBrains"/*/*; do
 		[[ -d "$jbplug" ]] || continue

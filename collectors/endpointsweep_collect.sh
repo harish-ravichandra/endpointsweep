@@ -519,7 +519,15 @@ for uh in $USER_HOMES; do
 	for extroot in "$uh/.vscode/extensions" "$uh/.vscode-insiders/extensions" "$uh/.cursor/extensions" "$uh/.windsurf/extensions" "$uh/.vscodium/extensions"; do
 		[ -d "$extroot" ] || continue
 		ide=$(basename "$(dirname "$extroot")" | sed 's/^\.//')
-		for ext in $(ls -1 "$extroot" 2>/dev/null | grep -Ei "$AI_EXT_PATTERN" | head -n 60); do
+		ext_count=0
+		# Glob rather than `ls | grep`: extension directory names can contain
+		# spaces, which word-splitting would tear apart.
+		for extpath in "$extroot"/*; do
+			[ -d "$extpath" ] || continue
+			[ "$ext_count" -lt 60 ] || break
+			ext=$(basename "$extpath")
+			printf '%s' "$ext" | grep -Eqi "$AI_EXT_PATTERN" || continue
+			ext_count=$((ext_count + 1))
 			ext_id=$(printf '%s' "$ext" | sed -E 's/-[0-9]+\.[0-9]+\.[0-9]+.*$//')
 			ext_ver=$(printf '%s' "$ext" | sed -nE 's/.*-([0-9]+\.[0-9]+\.[0-9]+.*)$/\1/p')
 			jrow "$F_EXTS" "$(printf '{"ide":%s,"extension_id":%s,"version":%s,"user":%s,"path":%s}' \
@@ -620,7 +628,8 @@ for cmd in $(sort -u "$F_CMDINDEX" 2>/dev/null | head -n 60); do
 	/*) cpath="$cmd" ;;
 	*) cpath=$(command -v "$cmd" 2>/dev/null || printf '') ;;
 	esac
-	[ -n "$cpath" ] && [ -e "$cpath" ] || continue
+	[ -n "$cpath" ] || continue
+	[ -e "$cpath" ] || continue
 	cmode=$(stat -f '%Lp' "$cpath" 2>/dev/null || printf '')
 	entry=$(printf '%s:{"path":%s,"mode":%s}' "$(jstr "$cmd")" "$(jstr "$cpath")" "$(jstr "$cmode")")
 	if [ -z "$CMDINDEX_JSON" ]; then CMDINDEX_JSON="$entry"; else CMDINDEX_JSON="$CMDINDEX_JSON,$entry"; fi

@@ -193,6 +193,15 @@ def seed_home(home: Path) -> None:
         encoding="utf-8",
     )
     (project / ".env").write_text(f"OPENAI_API_KEY={SECRETS[0]}\nPORT=3000\n", encoding="utf-8")
+    # IDE AI extensions. One name contains a space: the old `ls | grep` loop
+    # word-split on it and produced garbage entries.
+    for name in (
+        "GitHub.copilot-1.256.0",
+        "Continue.continue-1.1.42",
+        "sourcegraph.cody ai-1.2.3",
+        "ms-python.python-2024.1.0",  # not an AI extension - must be ignored
+    ):
+        (home / ".vscode/extensions" / name).mkdir(parents=True)
     # A deliberately broken config: recorded as present, never embedded.
     (home / ".continue").mkdir(parents=True)
     (home / ".continue/config.json").write_text('{"models": [', encoding="utf-8")
@@ -294,6 +303,18 @@ class TestLinuxCollectorRun:
         inventory = inventory_from_any(json.loads(out.read_text(encoding="utf-8")))
         found = {f.id for f in analyze_host(inventory).findings}
         assert {"ES-102", "ES-301", "ES-401", "ES-402", "ES-404"} <= found
+
+    def test_ide_extensions_are_discovered_by_glob_not_ls(self, collected):
+        """Names with spaces must survive, and non-AI extensions stay out."""
+        _, out, _ = collected
+        data = json.loads(out.read_text(encoding="utf-8"))
+        found = {e["extension_id"]: e for e in data["ide_extensions"]}
+        assert "GitHub.copilot" in found
+        assert "Continue.continue" in found
+        assert "sourcegraph.cody ai" in found, "a name with a space was lost"
+        assert found["GitHub.copilot"]["version"] == "1.256.0"
+        assert found["GitHub.copilot"]["ide"] == "vscode"
+        assert not any("ms-python" in k for k in found)
 
     def test_output_file_is_not_world_readable(self, collected):
         _, out, _ = collected

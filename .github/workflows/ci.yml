@@ -41,8 +41,12 @@ jobs:
       - name: shellcheck collectors
         run: |
           sudo apt-get update -qq && sudo apt-get install -y shellcheck
-          shellcheck --shell=sh collectors/endpointsweep_collect.sh
-          shellcheck --shell=bash collectors/endpointsweep_collect.bash
+          # Check both, then fail. Under `bash -e` the first failure aborted the
+          # step, so the Linux collector was never actually linted.
+          status=0
+          shellcheck --shell=sh collectors/endpointsweep_collect.sh || status=1
+          shellcheck --shell=bash collectors/endpointsweep_collect.bash || status=1
+          exit $status
 
   psscriptanalyzer:
     runs-on: windows-latest
