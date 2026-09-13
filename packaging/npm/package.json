@@ -1,0 +1,35 @@
+{
+  "name": "endpointsweep",
+  "version": "0.1.0",
+  "description": "Pointer package — EndpointSweep is a Python tool. Fleet-scale discovery and audit of MCP servers and agentic AI tooling across macOS, Linux and Windows endpoints.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-security",
+    "shadow-ai",
+    "agentic-ai",
+    "endpoint-security",
+    "security"
+  ],
+  "homepage": "https://github.com/harish-ravichandra/endpointsweep#readme",
+  "bugs": {
+    "url": "https://github.com/harish-ravichandra/endpointsweep/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harish-ravichandra/endpointsweep.git",
+    "directory": "packaging/npm"
+  },
+  "license": "MIT",
+  "author": "harish-ravichandra",
+  "bin": {
+    "endpointsweep": "bin/endpointsweep.js"
+  },
+  "files": [
+    "bin",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
