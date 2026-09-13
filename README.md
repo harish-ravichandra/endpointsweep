@@ -7,8 +7,10 @@ AI integration running across an endpoint fleet, audit each against a published
 risk rubric, and aggregate the findings into one report — built to run under real
 EDR/MDM deployment constraints.
 
-[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![python: 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
+[![PyPI](https://img.shields.io/pypi/v/endpointsweep.svg)](https://pypi.org/project/endpointsweep/)
+[![Python](https://img.shields.io/pypi/pyversions/endpointsweep.svg)](https://pypi.org/project/endpointsweep/)
+[![CI](https://github.com/harish-ravichandra/endpointsweep/actions/workflows/ci.yml/badge.svg)](https://github.com/harish-ravichandra/endpointsweep/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ---
 
@@ -44,15 +46,37 @@ Three findings in this tool cannot exist on a single machine at all:
 ## Install
 
 ```sh
-git clone https://github.com/endpointsweep/endpointsweep
-cd endpointsweep
-pip install -e .
+pipx install endpointsweep     # recommended: isolated, still on your PATH
+pip install endpointsweep
 ```
 
-Python 3.10+, standard library only. The collectors have no dependencies at all.
+Python 3.10+ and the standard library — no runtime dependencies. The collectors
+have none at all, not even Python: they are plain `sh`, `bash` and PowerShell.
 
-This installs two identical entry points: `endpointsweep` and the short alias
-`esweep`. The rest of this README uses the long form; use whichever you prefer.
+Two entry points are installed, `endpointsweep` and the short alias `esweep`.
+This README uses the long form; use whichever you prefer.
+
+Releases are published from CI by [PyPI Trusted Publishing][tp] — no API token
+exists for this project — so every artifact carries a PEP 740 attestation naming
+the repository, commit and workflow that built it:
+
+```sh
+curl -s https://pypi.org/integrity/endpointsweep/0.1.0/endpointsweep-0.1.0-py3-none-any.whl/provenance \
+  | jq '.attestation_bundles[0].publisher'
+```
+
+[tp]: https://docs.pypi.org/trusted-publishers/
+
+### From source
+
+Needed if you want the synthetic test fleet, or the collectors as loose files to
+paste into an MDM console:
+
+```sh
+git clone https://github.com/harish-ravichandra/endpointsweep
+cd endpointsweep
+pip install -e ".[dev]"
+```
 
 ---
 
@@ -103,7 +127,8 @@ endpointsweep report fleet.json -f html  -o fleet.html    # for the people who w
 
 ### Try it on the synthetic fleet
 
-The repo ships 28 synthetic hosts (all invented — no real fleet data, ever):
+The repo ships 28 synthetic hosts (all invented — no real fleet data, ever).
+These examples need a checkout, since `testdata/` is not part of the wheel:
 
 ```console
 $ endpointsweep report testdata/hosts --drilldown 0 | head -20

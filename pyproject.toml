@@ -31,7 +31,7 @@ endpointsweep = "endpointsweep.cli:main"
 esweep = "endpointsweep.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/endpointsweep/endpointsweep"
+Homepage = "https://github.com/harish-ravichandra/endpointsweep"
 
 [tool.setuptools]
 packages = [

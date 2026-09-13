@@ -18,7 +18,7 @@ from ..schema import Finding, FleetModel, HostReport, Severity
 
 SARIF_SCHEMA = "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"
 SARIF_VERSION = "2.1.0"
-INFORMATION_URI = "https://github.com/endpointsweep/endpointsweep"
+INFORMATION_URI = "https://github.com/harish-ravichandra/endpointsweep"
 
 _LEVEL = {
     Severity.CRITICAL: "error",
