@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="730" height="867" viewBox="0 0 730 867" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13">
+<rect width="730" height="867" rx="10" fill="#0d1117"/>
+<path d="M0 10a10 10 0 0 1 10-10h710a10 10 0 0 1 10 10v28H0z" fill="#161b22"/>
+<circle cx="21" cy="19" r="6" fill="#ff5f56"/><circle cx="41" cy="19" r="6" fill="#ffbd2e"/><circle cx="61" cy="19" r="6" fill="#27c93f"/>
+<text x="365" y="24" fill="#6e7681" text-anchor="middle" font-size="12">endpointsweep — synthetic fleet</text>
+<text x="22" y="62" fill="#3fb950" font-weight="bold">$</text>
+<text x="37.6" y="62" fill="#f0f6fc">endpointsweep analyze testdata/hosts/ws-lnx-1084.json</text>
+<text x="22" y="100.0" fill="#39c5cf" font-weight="bold" xml:space="preserve"># EndpointSweep host report — `ws-lnx-1084`</text>
+<text x="22" y="138.0" fill="#f0f6fc" font-weight="bold" xml:space="preserve">**Risk score:** 73.1/100 (CRITICAL) · **Max severity:** HIGH · **Findings:** 7</text>
+<text x="22" y="176.0" fill="#c9d1d9" xml:space="preserve">**CRITICAL** 0 · **HIGH** 3 · **MEDIUM** 2 · **LOW** 0 · **INFO** 2</text>
+<text x="22" y="214.0" fill="#39c5cf" font-weight="bold" xml:space="preserve">### Declared MCP servers</text>
+<text x="22" y="252.0" fill="#6e7681" xml:space="preserve">| Server              | Client         | Invocation                             |</text>
+<text x="22" y="271.0" fill="#6e7681" xml:space="preserve">|---------------------|----------------|----------------------------------------|</text>
+<text x="22" y="290.0" fill="#6e7681" xml:space="preserve">| internal-docs       | claude_desktop | node /opt/acme-mcp/docs-server/index.js|</text>
+<text x="22" y="309.0" fill="#6e7681" xml:space="preserve">| sequential-thinking | claude_desktop | npx @mcp/server-sequential@1.2.0       |</text>
+<text x="22" y="328.0" fill="#6e7681" xml:space="preserve">| memory              | cursor         | npx @mcp/server-memory@1.0.9           |</text>
+<text x="22" y="347.0" fill="#6e7681" xml:space="preserve">| staged-server       | cursor         | node /tmp/mcp-build/server.js          |</text>
+<text x="22" y="366.0" fill="#6e7681" xml:space="preserve">| github              | cursor         | npx -y @mcp/server-github@latest       |</text>
+<text x="22" y="404.0" fill="#39c5cf" font-weight="bold" xml:space="preserve">## Findings</text>
+<text x="22" y="442.0" fill="#d29922" font-weight="bold" xml:space="preserve">### HIGH (3)</text>
+<text x="22" y="480.0" fill="#f85149" xml:space="preserve">#### ES-104 — MCP server binary runs from a user- or world-writable path</text>
+<text x="22" y="499.0" fill="#c9d1d9" xml:space="preserve">- **Subject:** `cursor:staged-server`</text>
+<text x="22" y="518.0" fill="#c9d1d9" xml:space="preserve">- **Detail:** server launches from writable staging path: /tmp/mcp-build/server.js</text>
+<text x="22" y="537.0" fill="#c9d1d9" xml:space="preserve">- **OWASP LLM Top 10:** LLM03: Supply Chain</text>
+<text x="22" y="575.0" fill="#f85149" xml:space="preserve">#### ES-301 — MCP server launched from an unpinned package version</text>
+<text x="22" y="594.0" fill="#c9d1d9" xml:space="preserve">- **Detail:** @modelcontextprotocol/server-github resolved at launch — spec &#x27;latest&#x27;</text>
+<text x="22" y="613.0" fill="#c9d1d9" xml:space="preserve">- **MITRE ATLAS:** AML.T0010: ML Supply Chain Compromise</text>
+<text x="22" y="651.0" fill="#f85149" xml:space="preserve">#### ES-401 — Credential-shaped variable names embedded in an MCP server config</text>
+<text x="22" y="670.0" fill="#c9d1d9" xml:space="preserve">- **Detail:** 1 credential-shaped variable name(s) in the env block:</text>
+<text x="22" y="689.0" fill="#c9d1d9" xml:space="preserve">               GITHUB_PERSONAL_ACCESS_TOKEN</text>
+<text x="22" y="708.0" fill="#3fb950" xml:space="preserve">                ^ the NAME. EndpointSweep never reads, stores or reports the value.</text>
+<text x="22" y="746.0" fill="#6e7681" xml:space="preserve">[ … 4 more findings, full rubric at docs/rubric.md … ]</text>
+<text x="22" y="784.0" fill="#3fb950" font-weight="bold">$</text>
+<text x="37.6" y="784.0" fill="#f0f6fc">endpointsweep merge collected/ -o fleet.json</text>
+<text x="22" y="803.0" fill="#d29922" font-weight="bold" xml:space="preserve">ENDPOINTSWEEP|fleet:28hosts|129|CRITICAL</text>
+<text x="22" y="822.0" fill="#6e7681" xml:space="preserve"># one line, under 500 chars, exit code 1 — parses straight out of an EDR console</text>
+</svg>

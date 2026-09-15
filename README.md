@@ -12,6 +12,15 @@ EDR/MDM deployment constraints.
 [![CI](https://github.com/harish-ravichandra/endpointsweep/actions/workflows/ci.yml/badge.svg)](https://github.com/harish-ravichandra/endpointsweep/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+<p align="center">
+  <img src="docs/media/demo.svg" alt="EndpointSweep auditing a host from the synthetic test fleet" width="100%">
+</p>
+
+<p align="center"><sub>
+Output is verbatim from <code>testdata/</code>, a fleet of 28 synthetic hosts shipped with the repo.
+No real hostname, path or credential appears anywhere — by design, there is nothing to redact.
+</sub></p>
+
 ---
 
 ## Why this exists
