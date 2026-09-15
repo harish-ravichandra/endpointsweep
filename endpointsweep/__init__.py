@@ -5,7 +5,7 @@ EDR/MDM constraints; this Python package parses, audits and aggregates their
 output centrally.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Bumped when the on-wire collector JSON contract changes incompatibly.
 COLLECTOR_SCHEMA_VERSION = "1"

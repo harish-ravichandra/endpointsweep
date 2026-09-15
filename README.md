@@ -61,7 +61,7 @@ exists for this project — so every artifact carries a PEP 740 attestation nami
 the repository, commit and workflow that built it:
 
 ```sh
-curl -s https://pypi.org/integrity/endpointsweep/0.1.0/endpointsweep-0.1.0-py3-none-any.whl/provenance \
+curl -s https://pypi.org/integrity/endpointsweep/0.1.1/endpointsweep-0.1.1-py3-none-any.whl/provenance \
   | jq '.attestation_bundles[0].publisher'
 ```
 
@@ -134,7 +134,7 @@ These examples need a checkout, since `testdata/` is not part of the wheel:
 $ endpointsweep report testdata/hosts --drilldown 0 | head -20
 # EndpointSweep fleet report
 
-**Generated:** 2026-09-14T04:00:00+00:00 · **EndpointSweep:** v0.1.0 · **Hosts:** 28
+**Generated:** 2026-09-14T04:00:00+00:00 · **EndpointSweep:** v0.1.1 · **Hosts:** 28
 
 **Fleet risk score:** 38.4/100 (MODERATE)
 

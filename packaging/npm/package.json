@@ -1,6 +1,6 @@
 {
   "name": "endpointsweep",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pointer package — EndpointSweep is a Python tool. Fleet-scale discovery and audit of MCP servers and agentic AI tooling across macOS, Linux and Windows endpoints.",
   "keywords": [
     "mcp",
