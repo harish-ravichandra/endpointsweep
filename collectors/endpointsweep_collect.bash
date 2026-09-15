@@ -21,7 +21,7 @@
 set -u
 set -o pipefail
 
-ES_COLLECTOR_VERSION="0.1.1"
+ES_COLLECTOR_VERSION="0.1.2"
 ES_SCHEMA_VERSION="1"
 ES_OS="linux"
 
