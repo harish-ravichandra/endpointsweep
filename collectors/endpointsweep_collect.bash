@@ -21,7 +21,7 @@
 set -u
 set -o pipefail
 
-ES_COLLECTOR_VERSION="0.1.0"
+ES_COLLECTOR_VERSION="0.1.1"
 ES_SCHEMA_VERSION="1"
 ES_OS="linux"
 
@@ -365,6 +365,13 @@ SEEN_TOOLS="$ES_TMP/seen_tools"
 
 for bin in $AGENTIC_BINS; do
 	found=$(command -v "$bin" 2>/dev/null || printf '')
+	# `command -v` resolves builtins and keywords to their own name, and
+	# `continue` is a POSIX shell builtin — matching it unguarded invents an
+	# agentic CLI on every host on earth. Only an absolute path counts.
+	case "$found" in
+	/*) [ -x "$found" ] || found="" ;;
+	*) found="" ;;
+	esac
 	if [[ -n "$found" ]] && ! grep -Fxq "$found" "$SEEN_TOOLS" 2>/dev/null; then
 		printf '%s\n' "$found" >> "$SEEN_TOOLS"
 		emit_tool "$bin" "$found" "${USER:-unknown}" path

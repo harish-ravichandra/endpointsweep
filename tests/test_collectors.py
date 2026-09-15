@@ -378,3 +378,32 @@ def test_macos_collector_runs_under_strict_posix_sh(tmp_path):
     assert {s.name for s in inventory.mcp_servers} == {"gh"}
     assert inventory.mcp_servers[0].env_var_names == ["GITHUB_TOKEN"]
     assert {n for sig in inventory.env_key_signals for n in sig.var_names} == {"ANTHROPIC_API_KEY"}
+
+
+def test_collectors_report_the_packaged_version():
+    """A host document's collector_version is provenance; drift makes it a lie.
+
+    All three literals are hand-maintained, so nothing but a test keeps them
+    honest across a release.
+    """
+    from endpointsweep import __version__
+
+    assert re.search(rf'ES_COLLECTOR_VERSION="{re.escape(__version__)}"', MACOS.read_text())
+    assert re.search(rf'ES_COLLECTOR_VERSION="{re.escape(__version__)}"', LINUX.read_text())
+    assert re.search(
+        rf"\$script:CollectorVersion = '{re.escape(__version__)}'", WINDOWS.read_text()
+    )
+
+
+@pytest.mark.skipif(sys.platform != "linux", reason="Linux collector")
+def test_shell_builtins_are_not_reported_as_agentic_tools(collected):
+    """`command -v continue` prints `continue`: it is a POSIX builtin.
+
+    Taken at face value that invents an agentic CLI on every host, which in a
+    fleet census reads as 100% prevalence of a tool nobody installed.
+    """
+    _, out, _ = collected
+    tools = json.loads(out.read_text(encoding="utf-8"))["agentic_tools"]
+    bare = [t for t in tools if not t["path"].startswith("/")]
+    assert bare == [], f"non-absolute tool paths: {bare}"
+    assert "continue" not in {t["name"] for t in tools if t["path"] == t["name"]}

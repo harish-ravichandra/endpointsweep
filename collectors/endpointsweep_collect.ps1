@@ -31,7 +31,7 @@ Set-StrictMode -Version 2.0
 $ErrorActionPreference = 'SilentlyContinue'
 $ProgressPreference = 'SilentlyContinue'
 
-$script:CollectorVersion = '0.1.0'
+$script:CollectorVersion = '0.1.1'
 $script:SchemaVersion = '1'
 $script:Findings = 0
 $script:MaxSeverity = 'NONE'
